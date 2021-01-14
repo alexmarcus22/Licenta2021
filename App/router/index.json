@@ -1,0 +1,15 @@
+{
+	"/": {
+		"GET": {
+			"route": "home"
+		},
+		"POST": {
+			"route": "postfunction"
+		}
+	},
+	"/noroute": {
+		"GET": {
+			"route": "home"
+		}
+	}
+}
