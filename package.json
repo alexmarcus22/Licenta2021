@@ -4,8 +4,8 @@
   "description": "Licenta Matematica 2021",
   "main": "app.js",
   "scripts": {
-    "start buildev": "nodemon app.js --exec babel-node --",
-    "start": "nodemon app.js --exec babel-node --presets babel-preset-env"
+    "buildev": "nodemon app.js --exec babel-node --presets babel-preset-env",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
