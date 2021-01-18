@@ -1,7 +1,10 @@
 {
 	"/": {
 		"GET": {
-			"route": "home"
+			"route": "home",
+			"policy": [
+				"auth:check"
+			]
 		},
 		"POST": {
 			"route": "postfunction"
@@ -10,6 +13,11 @@
 	"/noroute": {
 		"GET": {
 			"route": "home"
+		}
+	},
+	"/login": {
+		"GET": {
+			"route": "login"
 		}
 	}
 }
