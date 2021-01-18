@@ -14,5 +14,10 @@
 		"GET": {
 			"route": "home"
 		}
+	},
+	"/login": {
+		"GET": {
+			"route": "login"
+		}
 	}
 }
