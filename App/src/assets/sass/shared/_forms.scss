@@ -1,0 +1,63 @@
+.form-component {
+	width: 300px;
+	font-size: 2rem;
+
+	.title {
+		font-size: 3.8rem;
+		font-weight: 600;
+	}
+
+	.subtitle {
+		font-size: 2.2rem;
+		margin-bottom: 4rem;
+		color: rgba($white, 0.7);
+	}
+
+	label {
+		display: none;
+	}
+
+	.form-group {
+		margin-bottom: 1.2rem;
+
+		.form-control {
+			font-size: 1.6rem;
+			padding: 2.4rem;
+			border: 1px solid #3f3f48;
+			border-radius: 1.2rem;
+			background: transparent;
+			color: rgba($white, 0.7);
+			background: #1e1c24;
+			margin-bottom: 1.4rem;
+			font-family: 'Quicksand', sans-serif;
+			box-shadow: none !important;
+
+			&:focus {
+				box-shadow: none;
+				border-color: $color;
+			}
+
+			&:hover {
+				border-color: rgba($color, .5);
+
+				&:focus {
+					border-color: $color;
+				}
+			}
+		}
+
+		&:last-of-type {
+			margin-bottom: 8rem;
+		}
+
+		.informative {
+			font-size: 1.4rem;
+			font-family: 'Quicksand', sans-serif;
+			text-align: center;
+			width: 100%;
+			display: block;
+			margin-bottom: 1.2rem;
+			color: $gray;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+.btn {
+	width: 100%;
+	background-color: $color;
+	color: $accent;
+	padding: 1rem 2rem;
+	border-radius: 1.2rem;
+	font-size: 1.4rem;
+	font-weight: 600;
+	font-family: "Quicksand", sans-serif;
+	box-shadow: none !important;
+	border: 1px solid $color;
+	transition: .4s all ease-in-out;
+
+	&:focus,
+	&:hover,
+	&:active,
+	&.active {
+		background-color: $accent;
+		color: $color;
+		border: 1px solid $color !important;
+	}
+
+	&:focus,
+	&:active,
+	&:not(.disabled):not(:disabled).active {
+		box-shadow: 0px 0px 0px 3px $accent, 0px 0px 0px 5px $color !important;
+		background-color: $accent !important;
+	}
+}

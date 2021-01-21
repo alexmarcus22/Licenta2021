@@ -27,14 +27,20 @@
     "express-handlebars": "^5.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
+    "babel-plugin-dynamic-import-webpack": "^1.1.0",
     "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.13",
     "concurrently": "^5.3.0",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-browserify": "^0.5.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
@@ -44,6 +50,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify-es": "^2.0.0",
+    "gulp-webpack": "^1.5.0",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7"
   }

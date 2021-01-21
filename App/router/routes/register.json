@@ -1,0 +1,10 @@
+{
+	"/register": {
+		"GET": {
+			"route": "register"
+		},
+		"POST": {
+			"route": "postfunction"
+		}
+	}
+}

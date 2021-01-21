@@ -3,12 +3,12 @@
 // 
 
 var express = require("express");
-var port = process.env.PORT || 3002;
+var port = process.env.PORT || 3000;
 var exphbs = require('express-handlebars');
 var path = require('path');
 var Routing = require('./App/router/index');
-var reload = require('reload');
 var session = require('express-session');
+var browserSync = require('browser-sync');
 
 
 var app = express();
@@ -20,7 +20,7 @@ app.use(session({
 }))
 
 let routeInfo = new Routing.JsonRoute(app, {
-	routesPath: "./App/router",
+	routesPath: "./App/router/routes",
 	controllersPath: "./App/router/controllers",
 	policyPath: "./App/router/policy",
 	defaultAction: "index",
@@ -40,5 +40,3 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 app.listen(port, () => {
 	console.log('App started...');
 })
-
-reload(app);
