@@ -1,17 +1,15 @@
 // 
 // @Alexandru Marcus
+// Server
 // 
 
-var express = require("express");
-var port = process.env.PORT || 3000;
-var exphbs = require('express-handlebars');
-var path = require('path');
-var Routing = require('./App/router/index');
-var session = require('express-session');
-var browserSync = require('browser-sync');
-
-
-var app = express();
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3000;
+const path = require('path');
+const exphbs = require('express-handlebars');
+const Routing = require('./App/router/index');
+const session = require('express-session');
 
 app.use(session({
 	secret: 'keyboard cat',
@@ -34,9 +32,8 @@ app.engine('handlebars', exphbs());
 app.set("view engine, 'handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use('/public', express.static(path.join(__dirname, 'public')))
 
 app.listen(port, () => {
-	console.log('App started...');
+	console.log('App started on port ', port);
 })
