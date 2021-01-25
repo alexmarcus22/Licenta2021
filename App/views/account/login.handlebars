@@ -1,6 +1,6 @@
 <div>
-  <div class="d-flex align-items-center justify-content-center h-100 w-30" autocomplete="new-password">
-    <form action="" method="POST" class="form-component">
+  <div class="d-flex align-items-center justify-content-center h-100 w-30">
+    <form action="" method="POST" class="form-component" autocomplete="new-password">
       <div class="form-group">
         <h2 class="title">
           Let's sign you in.
@@ -12,13 +12,15 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Enter email">
+              placeholder="Enter email" autocomplete="off">
             {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
               else.</small> --}}
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <i class="fas fa-eye input-icon"></i>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+              autocomplete="new-password"  style="display: none;"/>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
               autocomplete="new-password">
           </div>

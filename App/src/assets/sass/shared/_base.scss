@@ -4,19 +4,19 @@ html {
   font-family: "Quicksand", sans-serif;
 }
 
-:root {
-  --background: #{$color};
-  --text: #{$accent};
-}
-
-.dark-mode {
-  --background: #{$accent};
-  --text: #{$color};
-}
-
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--background);
-  color: var(--text);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+input {
+  filter: unset !important;
+
+  &:-moz-autofill {
+    filter: unset !important;
+  }
+
+  -webkit-text-security: disc;
 }

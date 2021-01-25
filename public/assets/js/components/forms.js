@@ -11,27 +11,31 @@ var FormComponent = function FormComponent(comp) {
   }
 
   function toggleViewPassword() {
-    // $(document).on("click", "svg.input-icon", (e) => {
-    // 	var inputIconSVG = document.querySelectorAll("svg.input-icon");
-    // 	var inputIconPATH = document.querySelectorAll("path");
-    // 	inputIconSVG.forEach((el) => {
-    // 		if(el === e.target) {
-    // 			console.log('SVG');
-    // 			el.classList.toggle("fa-eye-slash");
-    // 			el.classList.toggle("fa-eye");
-    // 		}
-    // 	})
-    // 	inputIconPATH.forEach((el) => {
-    // 		if(el === e.target) {
-    // 			console.log('PATH');
-    // 			el.classList.toggle("fa-eye-slash");
-    // 			el.classList.toggle("fa-eye");
-    // 		}
-    // 	})
-    // })
-    document.addEventListener('DOMContentLoaded', function () {
-      $(document).on('click', '.input-icon', function () {
-        $(this).toggleClass('fa-eye-slash').toggleClass('fa-eye');
+    document.addEventListener("DOMContentLoaded", function () {
+      $(document).on("click", ".input-icon", function (e) {
+        e.preventDefault();
+        var found = false;
+        var currentFormGroupPassword = null;
+        var parentEls = $(this).parents().map(function () {
+          return this;
+        });
+
+        for (var i = 0; i < parentEls.length && found != true; i++) {
+          if (parentEls[i].className === "form-group") {
+            found = true;
+            currentFormGroupPassword = parentEls[i];
+          }
+        }
+
+        var currentPasswordInput = currentFormGroupPassword.lastElementChild;
+
+        if (currentPasswordInput.type === "password") {
+          currentPasswordInput.setAttribute("type", "text");
+        } else {
+          currentPasswordInput.setAttribute("type", "password");
+        }
+
+        $(this).toggleClass("fa-eye-slash").toggleClass("fa-eye");
       });
     });
   }
