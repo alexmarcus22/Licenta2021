@@ -13,7 +13,7 @@ const concat = require("gulp-concat");
 const paths = {
 	public: './Public',
 	sass: {
-		src: 'App/src/assets/sass/**/*.scss',
+		src: 'App/src/assets/sass/**/*.*',
 		dest: 'Public/assets/css',
 	},
 	js: {
@@ -21,7 +21,7 @@ const paths = {
 		dest: 'Public/assets/js',
 	},
 	handlebars: {
-		src: 'App/views/**/*.handlebars'
+		src: 'App/views/**/*.hbs'
 	}
 }
 
@@ -75,6 +75,7 @@ function browserReload() {
 function watchFiles() {
 	watch("App/src/assets/sass/**/*.*", SassMinify).on('change', browserReload);
 	watch("App/src/assets/js/**/*.*", series(JsMinify, copyJs)).on('change', browserReload)
+	watch("App/router/**/*.*").on('change', browserReload)
 	watch(paths.handlebars.src).on('change', browserReload)
 }
 

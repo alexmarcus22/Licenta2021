@@ -1,10 +1,10 @@
 {
 	"/login": {
 		"GET": {
-			"route": "login"
+			"route": "get"
 		},
 		"POST": {
-			"route": "postfunction"
+			"route": "post"
 		}
 	}
 }
