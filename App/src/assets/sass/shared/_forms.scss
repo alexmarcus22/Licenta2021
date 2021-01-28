@@ -25,6 +25,7 @@
       transition: all 0.4s;
       width: 20px;
       height: 20px;
+      z-index: 100;
 
       &.fa-eye-slash {
         width: 22px;
@@ -92,6 +93,12 @@
       width: 100%;
       display: block;
       margin-bottom: 1.2rem;
+      color: $color;
+
+      a {
+        color: $color;
+        font-weight: 600;
+      }
     }
   }
 }

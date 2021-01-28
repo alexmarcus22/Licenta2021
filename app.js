@@ -1,15 +1,14 @@
 //
 // @Alexandru Marcus
-// Server
+// Express
 //
 
-const express = require("express");
+const express = module.exports = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 const path = require("path");
-const exphbs = require("express-handlebars");
-const Routing = require("./App/router/index");
 const session = require("express-session");
+const db = require("./App/db/index");
 
 app.use(
   session({
@@ -19,27 +18,11 @@ app.use(
   })
 );
 
-let routeInfo = new Routing.JsonRoute(app, {
-  routesPath: "./App/router/routes",
-  controllersPath: "./App/router/controllers",
-  policyPath: "./App/router/policy",
-  defaultAction: "index",
-  cors: true,
-  displayRoute: false,
-  processdir: __dirname,
-}).start();
 
-app.set("views", path.join(__dirname + "/App/views"));
-app.engine(
-  "hbs",
-  exphbs({
-    extname: "hbs",
-    defaultLayout: "main",
-    layoutsDir: __dirname + "/App/views/layouts/",
-    partialsDir: __dirname + "/App/views/partials/",
-  })
-);
-app.set("view engine, 'hbs");
+
+const routing = require("./App/router/index");
+app.use(routing);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/public", express.static(path.join(__dirname, "public")));

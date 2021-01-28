@@ -8,6 +8,25 @@ var FormComponent = function FormComponent(comp) {
 
   function attachEvents() {
     toggleViewPassword();
+    validateForm();
+  }
+
+  function validateForm() {
+    (function () {
+      "use strict";
+
+      var forms = document.querySelectorAll(".form-component");
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener("submit", function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add("was-validated");
+        }, false);
+      });
+    })();
   }
 
   function toggleViewPassword() {
