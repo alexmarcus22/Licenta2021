@@ -1,6 +1,18 @@
-$white: white;
-$black: black;
-$gray: gray;
+// Variables
 
-$accent: #191720;
-$color: #f1f1f1;
+$white: #ffffff;
+$black: #000000;
+$gray-light: rgba($white, .15);
+$gray-dark: rgba($black, .7);
+
+$accent: #e7e7e7;
+$color: #191720;
+
+:root {
+ --font-color: #1f1f1f;
+ --bg-color: #ffffff;
+ --heading-color: #333333;
+ --primary-color: #e7e7e7;
+ --secondary-color: #191720;
+ --input-secondary: #dad6d6;
+}
