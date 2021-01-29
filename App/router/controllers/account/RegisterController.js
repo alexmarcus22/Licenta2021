@@ -1,8 +1,8 @@
 const express = require("express");
-var router = express.Router()
+var router = express.Router();
 
 router.get("/account/register", (rq, rs, next) => {
-  rs.render("account/register.hbs")
+  return rs.render("account/register.hbs")
 });
 
 module.exports = router;
