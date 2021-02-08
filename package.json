@@ -50,6 +50,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify-es": "^2.0.0",
     "gulp-webpack": "^1.5.0",
+    "jquery-validation": "^1.19.3",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",

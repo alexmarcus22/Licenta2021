@@ -8,25 +8,35 @@ var FormComponent = function FormComponent(comp) {
 
   function attachEvents() {
     toggleViewPassword();
+    jQuery.validator.addMethod("placeholder", function (value, element) {
+      return value != $(element).attr("placeholder");
+    }, jQuery.validator.messages.required);
     validateForm();
   }
 
-  function validateForm() {
-    (function () {
-      "use strict";
-
-      var forms = document.querySelectorAll(".form-component");
-      Array.prototype.slice.call(forms).forEach(function (form) {
-        form.addEventListener("submit", function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-
-          form.classList.add("was-validated");
-        }, false);
-      });
-    })();
+  function validateForm(form, data) {
+    $("#registerForm").validate({
+      rules: {
+        firstName: {
+          required: true
+        },
+        lastName: {
+          required: true
+        },
+        emailAccount: {
+          required: true
+        },
+        confirmPasswordRegister: {
+          equalTo: "#passwordRegister"
+        }
+      },
+      messages: {
+        confirmPasswordRegister: "The passwords don't match."
+      },
+      submitHandler: form => {
+        $(form).submit();
+      }
+    });
   }
 
   function toggleViewPassword() {

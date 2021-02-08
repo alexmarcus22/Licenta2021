@@ -7,7 +7,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
       attachEvents();
     }
 
-    function attachEvents() {}
+    function attachEvents() {
+      jQuery.validator.addMethod("placeholder", function (value, element) {
+        return value != $(element).attr("placeholder");
+      }, jQuery.validator.messages.required);
+    }
 
     return {
       init: init,

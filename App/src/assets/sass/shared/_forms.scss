@@ -1,104 +1,117 @@
 .form-component {
-  width: 300px;
-  font-size: 2rem;
+	width: 300px;
+	font-size: 2rem;
 
-  .title {
-    font-size: 3.8rem;
-    font-weight: 600;
-  }
+	.title {
+		font-size: 3.8rem;
+		font-weight: 600;
+	}
 
-  .subtitle {
-    font-size: 2.2rem;
-    margin-bottom: 4rem;
-  }
+	.subtitle {
+		font-size: 2.2rem;
+		margin-bottom: 4rem;
+	}
 
-  label {
-    display: none;
-    & + .input-icon {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      margin-right: 2rem;
-      transform: translateY(-50%);
-      opacity: 0.6;
-      cursor: pointer;
-      transition: all 0.4s;
-      width: 20px;
-      height: 20px;
-      z-index: 100;
+	label {
+		display: none;
+		& + .input-icon {
+			position: absolute;
+			top: 2.4rem;
+			right: 0;
+			margin-right: 2rem;
+			transform: translateY(-50%);
+			opacity: 0.6;
+			cursor: pointer;
+			transition: all 0.4s;
+			width: 20px;
+			height: 20px;
+			z-index: 100;
 
-      &.fa-eye-slash {
-        width: 22px;
-        height: 22px;
-        margin-right: 1.9rem;
-      }
+			&.fa-eye-slash {
+				width: 22px;
+				height: 22px;
+				margin-right: 1.9rem;
+			}
 
-      &:active,
-      &.active,
-      &:hover,
-      &:focus {
-        opacity: 1;
-      }
-    }
-  }
+			&:active,
+			&.active,
+			&:hover,
+			&:focus {
+				opacity: 1;
+			}
+		}
 
-  .form-group {
-    margin-bottom: 1.2rem;
-    position: relative;
+		&.error {
+			display: none !important;
+			font-size: 1.4rem;
+		}
+	}
 
-    .form-control {
-      font-size: 1.4rem;
-      padding: 2.2rem 1.6rem;
-      border: 1px solid var(--secondary-color);
-      border-color: #adadad !important;
-      border-radius: 1.4rem;
-      color: var(--secondary-color);
-      background: var(--input-secondary);
-      margin-bottom: 1.4rem;
-      font-family: "Quicksand", sans-serif;
-      transition: 0.5s all;
+	.form-group {
+		margin-bottom: 1.2rem;
+		position: relative;
 
-      &:focus:not(.focus-visible) {
-        border-color: var(--secondary-color) !important;
+		.form-control {
+			font-size: 1.4rem;
+			padding: 2.2rem 1.6rem;
+			border: 1px solid var(--secondary-color);
+			border-color: #adadad !important;
+			border-radius: 1.4rem;
+			color: var(--secondary-color);
+			background: var(--input-secondary);
+			margin-bottom: 1.4rem;
+			font-family: "Quicksand", sans-serif;
+			transition: 0.5s all;
+
+			&:focus:not(.focus-visible) {
+				border-color: var(--secondary-color) !important;
 				box-shadow: 0px 0px 15px -7px var(--secondary-color) !important;
 			}
 
-      &:hover {
-        border-color: var(--secondary-color) !important;
-      }
+			&:hover {
+				border-color: var(--secondary-color) !important;
+			}
 
-      &::placeholder {
-        color: rgba(var(--secondary-color), 0.5);
-      }
+			&::placeholder {
+				color: rgba(var(--secondary-color), 0.5);
+			}
 
-      &:required,
-      &:invalid {
-        box-shadow: none !important;
-        -webkit-box-shadow: none !important;
-      }
+			&:required,
+			&:invalid {
+				box-shadow: none !important;
+				-webkit-box-shadow: none !important;
+			}
 
-      @-moz-document url-prefix(about:preferences) {
-        display: none !important;
-      }
-    }
+			@-moz-document url-prefix(about:preferences) {
+				display: none !important;
+			}
 
-    &:last-of-type {
-      margin-bottom: 8rem;
-    }
+			&.error {
+				border: 1px solid  darkred !important;
 
-    .informative {
-      font-size: 1.4rem;
-      font-family: "Quicksand", sans-serif;
-      text-align: center;
-      width: 100%;
-      display: block;
-      margin-bottom: 1.2rem;
-      color: $color;
+				&:focus {
+					border: 1px solid darkred !important;
+				}
+			}
+		}
 
-      a {
-        color: $color;
-        font-weight: 600;
-      }
-    }
-  }
+		&:last-of-type {
+			margin-bottom: 8rem;
+		}
+
+		.informative {
+			font-size: 1.4rem;
+			font-family: "Quicksand", sans-serif;
+			text-align: center;
+			width: 100%;
+			display: block;
+			margin-bottom: 1.2rem;
+			color: $color;
+
+			a {
+				color: $color;
+				font-weight: 600;
+			}
+		}
+	}
 }
